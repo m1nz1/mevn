@@ -1,0 +1,21 @@
+.tab {
+    background: #c9c9c9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    width: 25%;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: inset -1px 3px 7px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab:hover {
+    background: #e8e8e8;
+  }
+  
+  #header {
+    color: #fff;
+    text-align: center;
+    height: 150px;
+    }
