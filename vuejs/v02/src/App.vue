@@ -2,9 +2,13 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/content">Content</router-link> |
+    <router-link to="/ex1">ex1</router-link> |
+    <router-link to="/ex2">ex2</router-link> |
+    <router-link to="/ex3">ex3</router-link> |
+    <router-link to="/ex4">ex4</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -17,7 +21,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 10px 30px;
 }
 
 nav a {
