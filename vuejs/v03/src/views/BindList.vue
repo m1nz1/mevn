@@ -1,0 +1,67 @@
+<template>
+  <div>
+    <h2>6. BindList 예제</h2>
+  </div>
+  <table>
+    <tr>
+      <th>No.</th>
+      <th>카테고리</th>
+      <th>제품명</th>
+      <th>가격</th>
+      <th>배송료</th>
+      <th>수량</th>
+      <th>합계</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <th>악세사리</th>
+      <th>기계식키보드</th>
+      <th>250000</th>
+      <th>5000</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>2</th>
+      <th>악세사리</th>
+      <th>무선마우스</th>
+      <th>12000</th>
+      <th>3000</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>노트북/테블릿</th>
+      <th>아이패드</th>
+      <th>7250000</th>
+      <th>10000</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>노트북/테블릿</th>
+      <th>태블릿PC</th>
+      <th>350000</th>
+      <th>5000</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>5</th>
+      <th>악세사리</th>
+      <th>무선충전기</th>
+      <th>42000</th>
+      <th>4000</th>
+      <th>0</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th colspan="6">총합</th>
+      <th>0</th>
+    </tr>
+  </table>
+</template>
+<script></script>
+<style></style>
