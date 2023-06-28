@@ -3,8 +3,7 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const http = require('http')
-const app = expre
-ss()
+const app = express()
 
 const server = http.createServer(app)
 const io = new Server(server)
@@ -18,7 +17,7 @@ io.on('connection', (socket) => {
   console.log(socket)
   socket.on('chat message', (msg) => {
     // 받을 내용
-    console.log('io',io)
+    console.log('io', io)
     io.emit('chat message', msg) //보낼 내용
   })
 })
