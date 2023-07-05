@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.4.0/dist/axios.min.js"></script>
+<script>
+    axios
+        .get('https://www.google.com/search?q=%EB%89%B4%EC%8A%A4&oq=%EB%89%B4%EC%8A%A4&aqs=chrome..69i57j69i61l3.699321510j0j15&sourceid=chrome&ie=UTF-8')
+        .then(function(res){
+            console.log('통신결과:', res)
+            console.log('status:', res.status)
+            console.log('data:'+ res.data)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+</script>
+</head>
+<body>
+    
+</body>
+</html>
