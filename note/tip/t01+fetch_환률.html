@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form>
+            <input type="text" id="inputAmount" placeholder="금액을 입력하세요">
+            달러
+            <button type="button" onclick="calculateExchangeRate()">계산</button>
+        </form>
+        <h1 id="result"></h1>
+        <p id="exchangeRate"></p>
+    </div>
+    
+    <script>
+        function calculateExchangeRate() {
+            const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const exchangeRate = data[0].basePrice;
+                    const inputAmount = document.getElementById('inputAmount').value;
+                    const calculatedAmount = inputAmount * exchangeRate;
+                    document.getElementById('result').textContent = inputAmount + ' 달러는 약 ' + calculatedAmount.toLocaleString('ko-KR') + ' 원입니다.';
+                })
+                .catch(error => {
+                    console.error('환율 정보를 가져오는 중 오류가 발생했습니다:', error);
+                });
+        }
+    
+        function displayExchangeRate() {
+            const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const exchangeRate = data[0].basePrice;
+                    document.getElementById('exchangeRate').textContent = '현재 환율: 1 달러 = ' + exchangeRate.toFixed(2).toLocaleString('ko-KR') + ' 원';
+                })
+                .catch(error => {
+                    console.error('환율 정보를 가져오는 중 오류가 발생했습니다:', error);
+                });
+        }
+    
+        // 초기 로딩 시 환율 정보 가져오기 및 표시
+        displayExchangeRate();
+    </script>
+    
+    
+</body>
+</html>

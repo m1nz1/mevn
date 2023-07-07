@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹브라우저에 저장</title>
+    <script>
+       let saveValue
+        function load(){
+           saveValue = localStorage.getItem('input') //첫 로딩때 값 읽어오기 
+           loadArr = localStorage.getItem('Array')??''
+        }
+        document.addEventListener('DOMContentLoaded',()=>{
+            load() 
+            const button = document.createElement('button')
+            const input = document.createElement('input')
+            const button2 = document.createElement('button')
+            const p = document.createElement('p')
+            const p2 = document.createElement('p')
+            
+            document.body.append(button,button2,input,p,p2)
+            
+            button.textContent ='지우기'
+            input.setAttribute('placeholder',saveValue) // input 박스에 연하게 마지막 값 불러오기
+            button2.textContent ='배열추가'
+            p.textContent = `이전 실행 떄의 마지막 값: ${saveValue}`
+            p2.innerHTML = loadArr // string
+            // 화면에 표시 
+            
+            let arr = [] // 배열 만들기
+            console.log(loadArr,typeof loadArr, Array.isArray(loadArr)) // loadArr is string !!
+            loadArr == '' ? arr.length == 0 : (arr = loadArr.split(','))
+
+
+            input.addEventListener('keyup',(e)=>{
+                const value = e.currentTarget.value
+                localStorage.setItem('input',value)
+                load() // 키값이 입력 될때마다 읽어오기
+                input.value = saveValue
+                if (saveValue){
+                    p.textContent = `이전 실행 떄의 마지막 값: ${saveValue}`
+                }
+            })
+
+            button.addEventListener('click',()=>{
+                localStorage.clear()
+                input.value = ''
+                p.textContent = ''
+            })
+
+            button2.addEventListener('click',()=>{
+                arr.push (saveValue)
+                localStorage.setItem('Array',arr)       //배열로 보여줌
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
